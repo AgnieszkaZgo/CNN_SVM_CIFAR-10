@@ -33,12 +33,27 @@ param_grid = {'model__penalty': ['l1', 'l2'],
 
 gs = GridSearchCV(pipe, param_grid, cv=3, n_jobs=-1, verbose=1, return_train_score=True)
 gs.fit(codes_train, y_train.flatten())
-print('Best parameters:', gs.best_params_)
+best_1 = gs.best_params_
 
-best_model = gs.best_estimator_
-pred = best_model.predict(codes_test)
-pred_2 = best_model.predict(codes_train)
+best_model_1 = gs.best_estimator_
+pred_1 = best_model_1.predict(codes_test)
+pred_2_1 = best_model_1.predict(codes_train)
 
-print('Accuracy on test set:', accuracy_score(pred, y_test.flatten()))
-print('Accuracy on train set:', accuracy_score(pred_2, y_train.flatten()))
+param_grid = {'penalty': ['l1', 'l2'],
+              'C': [1e-4, 1e-3, 0.01, 0.1, 1]}
+
+gs = GridSearchCV(svm.LinearSVC(dual=False, max_iter=5000), param_grid, cv=3, n_jobs=-1, verbose=10, return_train_score=True)
+gs.fit(codes_train, y_train.flatten())
+best_2 = gs.best_params_
+
+best_model_2 = gs.best_estimator_
+pred_2 = best_model_2.predict(codes_test)
+pred_2_2 = best_model_2.predict(codes_train)
+
+print('Scalar Accuracy on test set:', accuracy_score(pred_1, y_test.flatten()))
+print('Scalar Accuracy on train set:', accuracy_score(pred_2_1, y_train.flatten()))
+print('Best parameters:', best_1)
+print('Accuracy on test set:', accuracy_score(pred_2, y_test.flatten()))
+print('Accuracy on train set:', accuracy_score(pred_2_2, y_train.flatten()))
+print('Best parameters:', best_2)
 
