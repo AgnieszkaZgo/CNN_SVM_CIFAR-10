@@ -42,7 +42,8 @@ pred_2_1 = best_model_1.predict(codes_train)
 param_grid = {'penalty': ['l1', 'l2'],
               'C': [1e-4, 1e-3, 0.01, 0.1, 1]}
 
-gs = GridSearchCV(svm.LinearSVC(dual=False, max_iter=5000), param_grid, cv=3, n_jobs=-1, verbose=10, return_train_score=True)
+gs = GridSearchCV(svm.LinearSVC(dual=False, max_iter=5000), param_grid,
+                  cv=3, n_jobs=-1, verbose=10, return_train_score=True)
 gs.fit(codes_train, y_train.flatten())
 best_2 = gs.best_params_
 
