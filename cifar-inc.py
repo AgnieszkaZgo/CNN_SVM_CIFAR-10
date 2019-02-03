@@ -26,7 +26,7 @@ codes_train = model_inc.predict(X_train).reshape(x_train.shape[0], -1)
 codes_test = model_inc.predict(X_test).reshape(x_test.shape[0], -1)
 
 
-pipe = Pipeline([('standarize', StandardScaler()), ('model', svm.SVC(dual=False))])
+pipe = Pipeline([('standarize', StandardScaler()), ('model', svm.LinearSVC(dual=False))])
 
 param_grid = {'model__penalty': ['l1', 'l2'],
               'model__C': [1e-4, 1e-3, 0.01, 0.1, 1]}
