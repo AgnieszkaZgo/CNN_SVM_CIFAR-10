@@ -31,6 +31,8 @@ svc.fit(codes_train, y_train.flatten())
 
 codes_test = scaler.transform(codes_test)
 pred = svc.predict(codes_test)
+pred_2 = svc.predict(codes_train)
 
 print('Accuracy on test set:', accuracy_score(pred, y_test.flatten()))
+print('Accuracy on train set:', accuracy_score(pred_2, y_train.flatten()))
 
