@@ -26,7 +26,7 @@ codes_test = model_inc.predict(X_test).reshape(x_test.shape[0], -1)
 scaler = StandardScaler()
 scaler.fit(codes_train)
 codes_train = scaler.transform(codes_train)
-svc = svm.LinearSVC(C=10)
+svc = svm.LinearSVC(C=10, dual=False, penalty='l1', max_iter=5000)
 svc.fit(codes_train, y_train.flatten())
 
 codes_test = scaler.transform(codes_test)
