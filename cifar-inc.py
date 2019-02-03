@@ -1,6 +1,6 @@
 from keras.datasets import cifar10
 import numpy as np
-from sklearn import svm=
+from sklearn import svm
 from keras.applications.inception_v3 import InceptionV3
 from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import StandardScaler
