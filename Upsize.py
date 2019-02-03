@@ -6,9 +6,9 @@ import pickle
 
 (x_train, y_train), (x_test, y_test) = cifar10.load_data()
 
-X_train=np.empty((x_train.shape[0], 75, 75, 3))
+X_train = np.empty((x_train.shape[0], 75, 75, 3))
 for i in range(x_train.shape[0]):
-    X_train[i]=np.array(Image.fromarray(x_train[i]).resize((75, 75)))
+    X_train[i] = np.array(Image.fromarray(x_train[i]).resize((75, 75)))
 
 
 with open('X_train.pkl', 'wb') as handle:
