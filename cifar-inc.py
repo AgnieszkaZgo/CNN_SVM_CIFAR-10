@@ -30,7 +30,6 @@ pipe = Pipeline([('standarize', StandardScaler()), ('model', svm.LinearSVC(dual=
 
 param_grid = {'model__penalty': ['l1', 'l2'],
               'model__C': [0.005, 0.008, 0.01, 0.02, 0.05],
-              'model__loss': ['hinge', 'squared_hinge'],
               'model__tol': [1e-5, 1e-4, 1e-3]}
 
 gs = GridSearchCV(pipe, param_grid, cv=3, n_jobs=-1, verbose=10, return_train_score=True)
