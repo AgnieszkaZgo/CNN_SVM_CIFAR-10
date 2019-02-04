@@ -12,8 +12,8 @@ with open('/home/agnieszka/codes_test.pkl', 'rb') as codes:
 
 (_, y_train), (_, y_test) = cifar10.load_data()
 
-param_grid = [{'kernel':['linear'], 'C': [0.01, 0.01, 0.1, 1]},
-              {'kernel': ['rbf'], 'C': [0.01, 0.01, 0.1, 1], 'gamma':}]
+param_grid = [{'kernel': ['linear'], 'C': [0.01, 0.01, 0.1, 1]},
+              {'kernel': ['rbf'], 'C': [0.01, 0.01, 0.1, 1], 'gamma':[1e-5, 1e-4, 1e-3, 1e-2]}]
 
 gs = GridSearchCV(svm.SVC(), param_grid, cv=3, n_jobs=-1, verbose=10, return_train_score=True)
 gs.fit(codes_train, y_train.flatten())
