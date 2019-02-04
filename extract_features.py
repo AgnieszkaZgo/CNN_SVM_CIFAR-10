@@ -1,10 +1,7 @@
 from keras.datasets import cifar10
 import numpy as np
-from sklearn import svm
 from keras.applications.inception_v3 import InceptionV3
-from sklearn.metrics import accuracy_score
 from PIL import Image
-from sklearn.model_selection import GridSearchCV
 import pickle
 
 (x_train, y_train), (x_test, y_test) = cifar10.load_data()
@@ -33,16 +30,3 @@ with open('/home/agnieszka/codes_train.pkl', 'wb') as codes:
 
 with open('/home/agnieszka/codes_test.pkl', 'wb') as codes:
     pickle.dump(codes_test, codes)
-
-param_grid = {'C': [0.01, 0.1, 1]}
-
-gs = GridSearchCV(svm.SVC(kernel='linear'), param_grid, cv=3, n_jobs=-1, verbose=10, return_train_score=True)
-gs.fit(codes_train, y_train.flatten())
-print('Best parameters:', gs.best_params_)
-
-best_model = gs.best_estimator_
-pred = best_model.predict(codes_test)
-pred_2 = best_model.predict(codes_train)
-
-print('Accuracy on test set:', accuracy_score(pred, y_test.flatten()))
-print('Accuracy on train set:', accuracy_score(pred_2, y_train.flatten()))
