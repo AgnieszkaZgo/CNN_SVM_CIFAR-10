@@ -14,7 +14,7 @@ with open('/home/agnieszka/codes_test.pkl', 'rb') as codes:
 
 (_, y_train), (_, y_test) = cifar10.load_data()
 
-param_grid = [{'model__kernel': ['linear'], 'model__C': [0.01, 0.01, 0.1, 1]},
+param_grid = [{'model__kernel': ['linear'], 'model__C': [0.001, 0.01, 0.1, 1]},
               {'model__kernel': ['rbf'], 'model__C': [1e-4, 0.001, 10, 100], 'model__gamma':[1e-6, 1e-4, 0.1, 'scale']}]
 
 pipe = Pipeline([('scaler', StandardScaler()), ('model', svm.SVC())])

@@ -21,8 +21,8 @@ codes_train = np.vstack([codes_train, codes_train_flip])
 (_, y_train), (_, y_test) = cifar10.load_data()
 y_train = np.vstack([y_train, y_train])
 
-param_grid = [{'model__kernel': ['linear'], 'model__C': [0.01, 0.01, 0.1, 1]},
-              {'model__kernel': ['rbf'], 'model__C': [1e-4, 0.001, 10, 100], 'model__gamma':[1e-6, 1e-4, 0.1, 'scale']}]
+param_grid = [{'model__kernel': ['linear'], 'model__C': [0.001, 0.01, 0.1, 1]},
+              {'model__kernel': ['rbf'], 'model__C': [1, 10, 50], 'model__gamma': ['scale']}]
 
 pipe = Pipeline([('scaler', StandardScaler()), ('model', svm.SVC())])
 
