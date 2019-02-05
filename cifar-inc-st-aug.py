@@ -32,7 +32,7 @@ print('Best parameters:', gs.best_params_)
 
 best_model_st = gs.best_estimator_
 
-with open('/home/agnieszka/best_model_st_aug.pkl', 'wb') as model:
+with open('/home/agnieszka/best_model_st_aug.sav', 'wb') as model:
     pickle.dump(best_model_st, model)
 
 pred_1 = best_model_st.predict(codes_test)
