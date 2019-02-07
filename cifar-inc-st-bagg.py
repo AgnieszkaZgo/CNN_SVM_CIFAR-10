@@ -20,7 +20,7 @@ param_grid = [{'model__base_estimator__kernel': ['linear'], 'model__base_estimat
                'model__base_estimator__gamma':['scale'], 'model__max_samples':[0.3, 0.5],
                'model__max_features':[0.3, 0.5]}]
 
-pipe = Pipeline([('scaler', StandardScaler()), ('model', BaggingClassifier(svm.SVC(), n_jobs=-1))])
+pipe = Pipeline([('scaler', StandardScaler()), ('model', BaggingClassifier(svm.SVC()))])
 
 gs = GridSearchCV(pipe, param_grid, cv=3, n_jobs=-1, verbose=10, return_train_score=True)
 gs.fit(codes_train, y_train.flatten())
