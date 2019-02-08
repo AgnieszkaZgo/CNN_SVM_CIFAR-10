@@ -12,5 +12,11 @@ Repository contains:
 **flip_extract_features.py**  
 Extracted features are saved to: *codes_train.pkl*, *codes_train_flip.pkl*, *codes_test.pkl* in */home/agnieszka/* directory.
 
+3. Files with python code to find best Support Vector Classifier on CNN codes extracted by foregoing scripts:  
+**cifar-inc.py**  
+**cifar-inc-st.py**  
+**cifar-inc-st-aug.py**  
+**cifar-inc-st-bagg.py**  
+Best models found by GridSearchCV are saved to: *best_model.sav*, *best_model_st.sav*, *best_model_st_aug.sav*, *best_model_st_bagg.sav* in */home/agnieszka/* directory.
     
 https://drive.google.com/file/d/16DABubDSfuapGQRcq0quPxovDUEu0Pjb/view?usp=sharing
