@@ -6,6 +6,8 @@
 Repository contains:
 
     * Analysis_cifar-10.ipnb
+    
+    
     Main part of work, which will guide you through the whole learning and analysis process.
     
 https://drive.google.com/file/d/16DABubDSfuapGQRcq0quPxovDUEu0Pjb/view?usp=sharing
