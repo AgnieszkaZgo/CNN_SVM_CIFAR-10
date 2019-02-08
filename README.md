@@ -5,7 +5,7 @@
 
 Repository contains:
 
-1. Main part of work, which will guide you through the whole learning and analysis process is in a jupyter notebook file:   **Analysis_cifar-10.ipynb**  
+1. Main part of work, which will guide you through the whole learning and analysis process in a jupyter notebook file:   **Analysis_cifar-10.ipynb**  
    
 2. Files with python code to download dataset and extract features using InceptionV3 network:   
 **extract_features.py**  
@@ -19,4 +19,8 @@ Extracted features are saved to: *codes_train.pkl*, *codes_train_flip.pkl*, *cod
 **cifar-inc-st-bagg.py**  
 Best models found by GridSearchCV are saved to: *best_model.sav*, *best_model_st.sav*, *best_model_st_aug.sav*, *best_model_st_bagg.sav* in */home/agnieszka/* directory.
     
+4. Text file with python packages versions I used:  
+**requirements.txt**
+
+5. All the files saved during the work are available at:  
 https://drive.google.com/file/d/16DABubDSfuapGQRcq0quPxovDUEu0Pjb/view?usp=sharing
