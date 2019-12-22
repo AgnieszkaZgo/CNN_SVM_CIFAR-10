@@ -18,9 +18,6 @@ Extracted features are saved to: *codes_train.pkl*, *codes_train_flip.pkl*, *cod
 **cifar-inc-st-aug.py**  
 **cifar-inc-st-bagg.py**  
 Best models found by GridSearchCV are saved to: *best_model.sav*, *best_model_st.sav*, *best_model_st_aug.sav*, *best_model_st_bagg.sav* in */home/agnieszka/* directory.
-    
-4. Text file with python packages versions I used:  
-**requirements.txt**
 
-5. All the files saved during the work are available at:  
+4. All the files saved during the work are available at:  
 https://drive.google.com/file/d/16DABubDSfuapGQRcq0quPxovDUEu0Pjb/view?usp=sharing
